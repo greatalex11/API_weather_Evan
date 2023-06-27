@@ -1,3 +1,32 @@
 html {
-    font-family: 'Oxygen', sans-serif;
+	font-family: "Oxygen", sans-serif;
+    color: white;
+}
+
+body{
+    display: flex;
+	flex-direction: column;
+    align-items: center ; 
+    justify-content: center ;
+    margin:0 ; 
+    padding: 0; 
+    
+}
+
+body, html {
+    height: 100%;
+  }
+
+#bck_ctn {
+background-image: url('../assets/fond1.jpg');
+height: 100%;
+width: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#camera_button{
+    height: 35.69px ;
+    width: 35.69px ;
 }
