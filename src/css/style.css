@@ -1,9 +1,20 @@
+.hot_temp_filter{
+    background: linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+backdrop-filter: blur(50px);
+
+}
+
+.glass_filter{
+  background-color: rgba(217, 217, 217, 0.30) ;
+  backdrop-filter: blur(50px);
+
+  border: 1px solid rgb(44, 66, 104, 0.30)  ;
+}
+
 
 html {
 	font-family: "Oxygen", sans-serif;
-    color: white;
-     
- 
+    color: black;
 }
 
 body{
@@ -27,26 +38,102 @@ width: 100%;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+display: flex;
+flex-direction: column;
 }
 
 .ctn_btn{
+    height : 10% ;
     display: flex;
     flex-direction: row;
+    border: solid blue 1px ;
 }
 
-.top_btn{
+.ctn_btn > .top_btn {
+    margin-left: 0.69rem;
+    margin-top: 1.5625rem;
+    margin-bottom: 0;
     height: 56px;
     width: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    
-    
+    border: 1px solid rgb(247, 37, 133, 0.50) ;
 }
 
-.hot_temp_filter{
-    background: linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
-backdrop-filter: blur(50px);
-border: 1px solid rgb(247, 37, 133, 0.50) ;
+main {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-right: 2.75rem ;
+    padding-bottom: 2.12rem ;
+    padding-left: 3.25rem;
+}
+
+#ctn_info_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.info_nav{
+    color: white;
+    transform: skew(-20deg);
+    font-size: 1.875rem;
+    font-weight: 700 ; 
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.parallelogram{
+    height: 4.3183rem;
+    width: 7.844rem;
+	transform: skew(20deg);
+	border-radius: 10%;
+    text-align: center;
+}
+
+#ctn_info_meteo {
+width: 18.375rem;
+height: 9.25rem; 
+display: flex;
+flex-direction: row; 
+justify-content: space-evenly;
+align-items: center;
+clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0 100%, 0 0);
+border-radius: 5%;
+}
+
+#ctn_info_meteo > p {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+
+#ctn_map {
+    width: 18.375rem;
+    height: 21.9375rem;
+    border-radius: 5%;
+}
+
+input[type="button"]{
+    width: 18.375rem;
+    height: 4.0625rem;
+    border-radius: 100px ;
+    border: none;
+    background-color: rgba(243, 99, 42, 0.623) ;
+    backdrop-filter: blur(2.5px);
+    z-index: 1;
+}
+
+input[type="button"][value="118"]{
+    font-size: 1.875rem ;
+    font-weight: 700;
+}
+
+#bck_button{
+    background-image: url("../assets/bck_button.png");
 }
