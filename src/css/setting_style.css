@@ -115,5 +115,51 @@ main {
     width: 19.375rem;
     height: 13.8125rem;
     border-radius: 20% ;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+
+form{ 
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width : 19.375rem
+
+}
+
+/* cache apparance par defaut des checkbox 
+
+*/
+.ckb_ctn input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4.09613rem;
+    height: 5.3125rem;
+    background-image: url("../assets/moutain.svg");
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center
+
+  }
+  /* -----------------------*/
+
+  .ckb_ctn{
+    
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type="checkbox"]:checked{
+    background: linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+
+  
