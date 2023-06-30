@@ -152,3 +152,15 @@ input[type="button"][value="118"]{
 .ctn_setting_page{
     display: none;
 }
+
+.moreInfosPage{
+    display: flex ; 
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex
+}

@@ -1,17 +1,24 @@
-let settingIcon = document.querySelector('#setting_icon') ; 
-let formulaireSetting = document.querySelector('#formulaireSettings')
-let mainPage = document.querySelector('#mainPage') ; 
-let settingPage =  document.querySelector('.ctn_setting_page') ;
-console.log('settingIcon') ;
-console.log('formulaireSetting') ; 
-console.log('mainPage') ; 
-console.log('settingPage') ; 
+let settingIcon = document.querySelector('#setting_icon') ; console.log(settingIcon) ;
+let formulaireSetting = document.querySelector('#formulaireSettings') ; console.log(formulaireSetting) ;
+let mainPage = document.querySelector('#mainPage') ; console.log(mainPage) ;
+let settingPage =  document.querySelector('.ctn_setting_page') ; console.log(settingPage) ; 
+let moreInfosPage = document.querySelector('.moreInfoPage') ; console.log(moreInfosPage)
+let weatherIcon = document.querySelector('.weatherIcon') ; console.log(weatherIcon) ;
+
+ 
+ 
 
 
-settingIcon.addEventListener('click', function (){
-    mainPage.style.display = "none" ;
-    settingPage.style.display = "flex" ; 
-})
+// En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
+
+settingIcon.addEventListener('click', function() {
+    mainPage.classList.toggle('hidden');
+    settingPage.classList.toggle('visible');
+
+  });
+
+
+
 
 // Initialisation de la map OpenstreetMap
 let map = L.map('map').setView([51.505, -0.09], 13);
