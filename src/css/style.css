@@ -64,8 +64,8 @@ flex-direction: column;
 
 main {
     height: 90%;
-    display: flex; 
-    /* display: none ; */
+    /* display: flex;  */
+    display: none ;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 0.75rem;
@@ -154,9 +154,30 @@ input[type="button"][value="118"]{
 }
 
 .moreInfosPage{
-    display: flex ; 
+    display: flex ;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    padding-bottom: 5.55rem ;
 }
 
+.moreInfosPage > #ctn_map {
+    width: 21.875rem;
+    height: 19.875rem;
+    
+}
+
+#map2 {
+    width: 20.307rem;
+    height: 18.49463rem;
+}
+
+.ctn_wiki{
+    width: 21.875rem;
+    height: 19.875rem;
+    
+}
 .hidden {
     display: none;
 }

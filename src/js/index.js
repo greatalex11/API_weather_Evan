@@ -17,16 +17,26 @@ settingIcon.addEventListener('click', function() {
 
   });
 
-
+weatherIcon.addEventListener('click', function () {
+    weatherIcon.classList.toggle('visible');
+    mainPage.classList.toggle('hidden');
+})
 
 
 // Initialisation de la map OpenstreetMap
 let map = L.map('map').setView([51.505, -0.09], 13);
+let map2 = L.map('map2').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+// add the same OpenStreetMap tile layer to the second map
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map2);
 
 // Indique longitude et Latitude quanďla map est cliqué
 let popup = L.popup();
@@ -60,10 +70,9 @@ function onLocationError(e) {
 map.on('locationerror', onLocationError);
 
 
+
 // //desactive submit 
  formulaireSetting.addEventListener("submit", function(event) {
      // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
     event.preventDefault(); 
 });
-
-
