@@ -157,9 +157,11 @@ input[type="button"][value="118"]{
     display: flex ;
     flex-direction: column; 
     align-items: center;
-    justify-content: center;
+    
+    justify-content: space-between;
     height: 90%;
-    padding-bottom: 5.55rem ;
+    padding-top: 3.375rem;
+    padding-bottom: 2.81rem ;
 }
 
 .moreInfosPage > #ctn_map {
