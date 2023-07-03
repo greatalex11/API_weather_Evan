@@ -193,11 +193,12 @@ input[id="118"]{
     height: 13.8125rem;
     border-radius: 20% ;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
+
 
 form{ 
     height: 75%;
@@ -214,12 +215,30 @@ form{
     -webkit-appearance: none;
     width: 4.09613rem;
     height: 5.3125rem;
-    background-image: url("../assets/moutain.svg");
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center ;
 
   }
+
+  #lieux_interet{
+    background-image: url(../assets/moutain.svg);
+  }
+
+  #restaurant{
+    background-image: url(../assets/);
+  }
+  
+input[type="checkbox"]:checked{
+    background: 
+        url("../assets/moutain.svg"), 
+        linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
   /* -----------------------*/
 
 .ckb_ctn{
@@ -227,13 +246,9 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
-input[type="checkbox"]:checked{
-    background: linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
-    backdrop-filter: blur(50px);
-    border-radius: 50px;
-  }
 
 input[type="submit"]{
     appearance: none;
