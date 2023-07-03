@@ -68,8 +68,8 @@ flex-direction: column;
 
 main {
     height: 90%;
-    display: flex; 
-    /* display: none ; */
+    /* display: flex;  */
+    display: none ;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 0.75rem;
@@ -161,8 +161,8 @@ input[id="118"]{
 
 
 .ctn_setting_page{
-  display: none;
-    /* display: flex; */
+  /* display: none; */
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 90%;
@@ -224,20 +224,91 @@ form{
   #lieux_interet{
     background-image: url(../assets/moutain.svg);
   }
-
-  #restaurant{
-    background-image: url(../assets/);
-  }
-  
-input[type="checkbox"]:checked{
+  #lieux_interet:checked{
     background: 
-        url("../assets/moutain.svg"), 
-        linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    url("../assets/moutain.svg"), 
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
     background-repeat: no-repeat;
     background-position: center ;
     backdrop-filter: blur(50px);
     border-radius: 50px;
   }
+
+
+  #restaurant{
+   background-image: url(../assets/restaurant.svg);
+   background-size: 2.1875rem;
+  }
+#restaurant:checked{
+    background: 
+    url("../assets/restaurant.svg"),
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+}
+
+  #parking{
+    background-image: url(../assets/car-line.svg);
+  }
+    
+  #parking:checked{
+    background: 
+    url("../assets/car-line.svg"),
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-size:  40px, 65px  ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+  #lieux_historique{
+    background-image: url(../assets/castle.svg);
+  }
+  #lieux_historique:checked{
+    background: 
+    url("../assets/castle.svg"),
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-size:  40px, 65px  ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+  #hotel{
+    background-image: url(../assets/hotel.svg);
+  }
+  #hotel:checked{
+    background: 
+    url("../assets/hotel.svg"),
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-size:  40px, 65px  ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+  #hopital{
+    background-image: url(../assets/hospital.svg);
+  }
+  #hopital:checked{
+    background: 
+    url("../assets/hospital.svg"),
+    linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    background-size:  40px, 65px  ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+
+
+
 
   /* -----------------------*/
 

@@ -111,3 +111,5 @@ map2.on('locationerror', onLocationError);
      // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
     event.preventDefault(); 
 });
+
+//essai ajout effet check via javascript
