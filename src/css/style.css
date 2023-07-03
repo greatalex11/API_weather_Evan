@@ -31,6 +31,8 @@ backdrop-filter: blur(50px);
   border: 1px solid rgb(44, 66, 104, 0.30)  ;
 }
 
+/* -------filter page-------------- */
+
 #bck_ctn {
 background-image: url('../assets/bck_home_settings.png');
 height: 100%;
@@ -62,10 +64,12 @@ flex-direction: column;
     border: 1px solid rgb(247, 37, 133, 0.50) ;
 }
 
+/* -------home page-------------- */
+
 main {
     height: 90%;
-    /* display: flex;  */
-    display: none ;
+    display: flex; 
+    /* display: none ; */
     flex-direction: column;
     justify-content: space-between;
     padding-top: 0.75rem;
@@ -127,18 +131,21 @@ border-radius: 5%;
     height: 20.5rem;
     width: 17rem;
 }
-
+ 
 input[type="button"]{
     width: 18.375rem;
     height: 4.0625rem;
     border-radius: 100px ;
     border: none;
+}
+
+input[id="118"]{
     background-color: rgba(242, 97, 40, 0.678);
     backdrop-filter: blur(1.5px);
     z-index: 1;
 }
 
-input[type="button"][value="118"]{
+input[id="118"]{
     font-size: 1.875rem ;
     font-weight: 700;
 }
@@ -149,12 +156,109 @@ input[type="button"][value="118"]{
     width: 18.375rem;
 }
 
+
+/* -------settings page-------------- */
+
+
 .ctn_setting_page{
-    display: none;
+  display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+    padding-top: 0.75rem;
+    padding-right: 2.75rem ;
+    padding-bottom: 2.12rem ;
+    padding-left: 3.25rem;
 }
 
+#ctn_info_nav{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#localisation_info{
+    width: 19.375rem;
+    height: 6.875rem;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 5% 50%);
+    border-radius: 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ctn_ptn_irt{
+    width: 19.375rem;
+    height: 13.8125rem;
+    border-radius: 20% ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+form{ 
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width : 19.375rem
+
+}
+
+/* cache apparance par defaut des checkbox */ 
+.ckb_ctn input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4.09613rem;
+    height: 5.3125rem;
+    background-image: url("../assets/moutain.svg");
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center ;
+
+  }
+  /* -----------------------*/
+
+.ckb_ctn{
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+input[type="checkbox"]:checked{
+    background: linear-gradient(120deg, rgb(247, 37, 133, 0.50), rgb(255, 255, 255, 0.10));
+    backdrop-filter: blur(50px);
+    border-radius: 50px;
+  }
+
+input[type="submit"]{
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 6.25rem;
+  }
+
+#random, input[type="submit"] {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    width: 18.375rem;
+    height: 4.0625rem;
+}
+
+#random:active, input[type="submit"]:active {
+    background: linear-gradient(120deg, rgb(163, 240, 144, 1), rgb(255,255,255,1));
+ 
+}
+
+
+/* ------MoreInfosPage---------- */
 .moreInfosPage{
-    display: flex ;
+    /* display: flex ; */
+    display: none ; 
     flex-direction: column; 
     align-items: center;
     

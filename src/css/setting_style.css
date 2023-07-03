@@ -131,9 +131,7 @@ form{
 
 }
 
-/* cache apparance par defaut des checkbox 
-
-*/
+/* cache apparance par defaut des checkbox */ 
 .ckb_ctn input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
