@@ -68,8 +68,8 @@ flex-direction: column;
 
 main {
     height: 90%;
-    /* display: flex;  */
-    display: none ;
+    display: flex; 
+    /* display: none ; */
     flex-direction: column;
     justify-content: space-between;
     padding-top: 0.75rem;
@@ -161,8 +161,8 @@ input[id="118"]{
 
 
 .ctn_setting_page{
-  /* display: none; */
-    display: flex;
+  display: none;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-around;
     height: 90%;
