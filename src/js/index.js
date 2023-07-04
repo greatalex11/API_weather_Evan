@@ -6,9 +6,6 @@ let moreInfosPage = document.querySelector('.moreInfoPage') ; console.log(moreIn
 let weatherIcon = document.querySelector('.weatherIcon') ; console.log(weatherIcon) ;
 
  
- 
-
-
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
 settingIcon.addEventListener('click', function() {
@@ -106,10 +103,11 @@ function onLocationError(e) {
 map2.on('locationerror', onLocationError);
 
 
-// //desactive submit 
- formulaireSetting.addEventListener("submit", function(event) {
-     // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
-    event.preventDefault(); 
-});
 
-//essai ajout effet check via javascript
+
+// //desactive submit 
+//  formulaireSetting.addEventListener("submit", function(event) {
+//      // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
+//     // event.preventDefault(); 
+   
+// });
