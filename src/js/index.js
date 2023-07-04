@@ -1,5 +1,5 @@
 let settingIcon = document.querySelector('#setting_icon') ; console.log(settingIcon) ;
-let formulaireSetting = document.querySelector('#formulaireSettings') ; console.log(formulaireSetting) ;
+let formulaireSetting = document.querySelector('#formulaire') ; console.log(formulaireSetting) ;
 let mainPage = document.querySelector('#mainPage') ; console.log(mainPage) ;
 let settingPage =  document.querySelector('.ctn_setting_page') ; console.log(settingPage) ; 
 let moreInfosPage = document.querySelector('.moreInfoPage') ; console.log(moreInfosPage)
@@ -105,9 +105,19 @@ map2.on('locationerror', onLocationError);
 
 
 
-// //desactive submit 
-//  formulaireSetting.addEventListener("submit", function(event) {
-//      // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
-//     // event.preventDefault(); 
-   
-// });
+//desactive submit 
+ formulaireSetting.addEventListener("submit", function(event) {
+     // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
+    event.preventDefault(); 
+    //recupere le rslt de la recherche
+   rsltRech = document.getElementById("recherche").value ;
+   //affiche le résultat dans la console
+   console.log(rsltRech);
+   //retour page d'accueil
+   mainPage.classList.toggle('visible');
+   settingPage.classList.toggle('hidden');
+
+});
+
+
+//test api OpenWeather 
