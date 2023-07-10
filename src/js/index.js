@@ -39,12 +39,45 @@ let popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("Vous êtes ici ! " + e.latlng.toString())
+        .setContent("Voici la zone ! " + e.latlng.toString())
         .openOn(map);
 }
 
 map.on('click', onMapClick);
 
+
+//desactive submit 
+document.getElementById("validation").addEventListener("click", function(event) {
+    // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
+   event.preventDefault(); 
+   //recupere le rslt de la recherche
+  rsltRech = document.getElementById("recherche").value ;
+  //affiche le résultat dans la console
+  console.log(rsltRech);
+  
+  fetch('http://api.openweathermap.org/geo/1.0/direct?q='+rsltRech+'&limit=1&appid=308072db4828ee7f23b0fe63c3dd9918')
+  .then(response => response.json())
+  .then(data => {
+       console.log(data[0].lat);
+       console.log(data[0].lon);
+       map.setView([data[0].lat,data[0].lon], 15);
+       fetch('https://api.openweathermap.org/data/2.5/weather?lat='+data[0].lat+'&lon='+data[0].lon+'&units=metric&appid=308072db4828ee7f23b0fe63c3dd9918')
+       .then(response => response.json())
+       .then(data => { 
+            console.log(data);
+            document.querySelector("#temp").innerHTML = data.main.temp +"°C" ; 
+        });
+        
+   });
+  
+   //retour page d'accueil
+  mainPage.classList.toggle('visible');
+  settingPage.classList.toggle('hidden');
+
+});
+
+
+//test api OpenWeather 
 
 
 // Geolocalisation 
@@ -106,34 +139,4 @@ map.on('click', onMapClick);
 // map2.on('locationerror', onLocationError);
 
 
-//desactive submit 
- document.getElementById("validation").addEventListener("click", function(event) {
-     // Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
-    event.preventDefault(); 
-    //recupere le rslt de la recherche
-   rsltRech = document.getElementById("recherche").value ;
-   //affiche le résultat dans la console
-   console.log(rsltRech);
-   
-   fetch('http://api.openweathermap.org/geo/1.0/direct?q='+rsltRech+'&limit=1&appid=308072db4828ee7f23b0fe63c3dd9918')
-   .then(response => response.json())
-   .then(data => {
-        console.log(data[0].lat);
-        console.log(data[0].lon);
-        map.setView([data[0].lat,data[0].lon], 15);
-        fetch('https://api.openweathermap.org/data/2.5/weather?lat='+data[0].lat+'&lon='+data[0].lon+'&appid=308072db4828ee7f23b0fe63c3dd9918')
-        .then(response => response.json())
-        .then(data => { 
-             console.log(data);
-         });
-    });
 
-    
-    //retour page d'accueil
-   mainPage.classList.toggle('visible');
-   settingPage.classList.toggle('hidden');
-
-});
-
-
-//test api OpenWeather 
