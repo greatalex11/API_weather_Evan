@@ -18,6 +18,8 @@ const weatherIcons = {
 	Snow: "/src/assets/meteo/snow.svg",
 };
 
+
+
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
 settingIcon.addEventListener("click", function () {
@@ -50,7 +52,7 @@ function onLocationFound(e) {
 
 	L.marker(e.latlng)
 		.addTo(map)
-		.bindPopup("You are within " + radius + " meters from this point")
+		.bindPopup(" T'es ici " + e.latlng + " le sang")
 		.openPopup();
 
 	L.circle(e.latlng, radius).addTo(map);
@@ -76,71 +78,91 @@ function onMapClick(e) {
 
 map.on("click", onMapClick);
 
-//desactive submit
+
+//fonction principale d'appelle de l'api 
+function searchInAPI () {
+
+//recupere le rslt de la recherche
+rsltRech = document.getElementById("recherche").value;
+//affiche le résultat dans la console
+console.log(rsltRech);
+
+fetch(
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+        rsltRech +
+        "&limit=1&appid=308072db4828ee7f23b0fe63c3dd9918"
+)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data[0].lat);
+        console.log(data[0].lon);
+
+        //ajout d'un marqueur sur la zone de recherche avec une fenetre pop-up
+        map.setView([data[0].lat, data[0].lon], 15);
+        let markerRsltRech = L.marker([data[0].lat, data[0].lon]).addTo(map);
+        markerRsltRech.bindPopup("T'es à " + rsltRech + " le sang").openPopup();
+        // cercle de zone
+        L.circle([data[0].lat, data[0].lon], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.2,
+            radius: 1000
+        }).addTo(map);
+
+
+        fetch(
+            "https://api.openweathermap.org/data/2.5/weather?lat=" +
+                data[0].lat +
+                "&lon=" +
+                data[0].lon +
+                "&units=metric&appid=308072db4828ee7f23b0fe63c3dd9918"
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+
+                // permet d'afficher la température sur un nombre entier
+                document.querySelector("#temp").innerHTML =
+                    Math.round(data.main.temp) + "°C";
+                let temperature = Math.round(data.main.temp);
+                console.log(temperature);
+
+                // Affiche les icones selon le temps
+                const weatherMain = data.weather[0].main;
+                if (weatherIcons.hasOwnProperty(weatherMain)) {
+                    weatherIcon.src = weatherIcons[weatherMain];
+                }
+
+                // change la couleur du dégradé selon la température
+                let ctnInfoMeteo = document.querySelector("#ctn_info_meteo");
+                if (temperature <= 6) {
+                    ctnInfoMeteo.classList.replace(
+                        "glass_filter",
+                        "cold_temp_filter"
+                    );
+                } else if (temperature >= 18) {
+                    ctnInfoMeteo.classList.replace(
+                        "glass_filter",
+                        "hot_temp_filter"
+                    );
+                }
+                
+            });
+    });
+
+//retour page d'accueil
+mainPage.classList.toggle("visible");
+
+settingPage.classList.toggle("none");
+}
+
+
 document
 	.getElementById("validation")
-	.addEventListener("click", function (event) {
+	.addEventListener("click", function  (event) {
 		// Empêche le comportement par défaut du bouton "submit" car sinon la page se rafraichit
 		event.preventDefault();
 		//recupere le rslt de la recherche
-		rsltRech = document.getElementById("recherche").value;
-		//affiche le résultat dans la console
-		console.log(rsltRech);
+        searchInAPI(); 
+    }); 
 
-		fetch(
-			"http://api.openweathermap.org/geo/1.0/direct?q=" +
-				rsltRech +
-				"&limit=1&appid=308072db4828ee7f23b0fe63c3dd9918"
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data[0].lat);
-				console.log(data[0].lon);
-				map.setView([data[0].lat, data[0].lon], 15);
-                let markerRsltRech = L.marker([data[0].lat, data[0].lon]).addTo(map);
-                markerRsltRech.bindPopup("T'es à " + rsltRech + " le sang").openPopup();
-				fetch(
-					"https://api.openweathermap.org/data/2.5/weather?lat=" +
-						data[0].lat +
-						"&lon=" +
-						data[0].lon +
-						"&units=metric&appid=308072db4828ee7f23b0fe63c3dd9918"
-				)
-					.then((response) => response.json())
-					.then((data) => {
-						console.log(data);
-
-						// permet d'afficher la température sur un nombre entier
-						document.querySelector("#temp").innerHTML =
-							Math.round(data.main.temp) + "°C";
-						let temperature = Math.round(data.main.temp);
-						console.log(temperature);
-
-						// Affiche les icones selon le temps
-						const weatherMain = data.weather[0].main;
-						if (weatherIcons.hasOwnProperty(weatherMain)) {
-							weatherIcon.src = weatherIcons[weatherMain];
-						}
-
-						// change la couleur du dégradé selon la température
-						let ctnInfoMeteo = document.querySelector("#ctn_info_meteo");
-						if (temperature <= 6) {
-							ctnInfoMeteo.classList.replace(
-								"glass_filter",
-								"cold_temp_filter"
-							);
-						} else if (temperature >= 18) {
-							ctnInfoMeteo.classList.replace(
-								"glass_filter",
-								"hot_temp_filter"
-							);
-						}
-						
-					});
-			});
-
-		// //retour page d'accueil
-		// mainPage.classList.toggle("visible");
-
-		// settingPage.classList.toggle("none");
-	});

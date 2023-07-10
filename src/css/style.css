@@ -66,6 +66,7 @@ flex-direction: column;
     justify-content: center;
     border-radius: 100px;
     border: 1px solid rgb(247, 37, 133, 0.50) ;
+    box-sizing: border-box;
 }
 
 /* -------home page-------------- */
@@ -347,7 +348,7 @@ input[type="submit"]{
 /* ------MoreInfosPage---------- */
 .moreInfosPage{
     /* display: flex ; */
-    display: none ; 
+    display: flex ; 
     flex-direction: column; 
     align-items: center;
     
@@ -355,6 +356,7 @@ input[type="submit"]{
     height: 90%;
     padding-top: 3.375rem;
     padding-bottom: 2.81rem ;
+    
 }
 
 .moreInfosPage > #ctn_map {
