@@ -18,7 +18,6 @@ const weatherIcons = {
 	Snow: "/src/assets/meteo/snow.svg",
 };
 
-
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
 settingIcon.addEventListener("click", function () {
@@ -36,11 +35,34 @@ weatherIcon.addEventListener("click", function () {
 let map = L.map("map").setView([47.23, 6.024], 15);
 // Inverser les deux chiffre par rapport à capitals_europe_master.json
 
+//Geolocalisation à l'ouverture de l'application
+
+map.locate({ setView: true, maxZoom: 16 });
+
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 	attribution:
 		'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
+
+function onLocationFound(e) {
+	var radius = e.accuracy;
+
+	L.marker(e.latlng)
+		.addTo(map)
+		.bindPopup("You are within " + radius + " meters from this point")
+		.openPopup();
+
+	L.circle(e.latlng, radius).addTo(map);
+}
+
+map.on("locationfound", onLocationFound);
+
+function onLocationError(e) {
+	alert(e.message);
+}
+
+map.on("locationerror", onLocationError);
 
 // Indique longitude et Latitude quanďla map est cliqué
 let popup = L.popup();
@@ -75,6 +97,8 @@ document
 				console.log(data[0].lat);
 				console.log(data[0].lon);
 				map.setView([data[0].lat, data[0].lon], 15);
+                let markerRsltRech = L.marker([data[0].lat, data[0].lon]).addTo(map);
+                markerRsltRech.bindPopup("T'es à " + rsltRech + " le sang").openPopup();
 				fetch(
 					"https://api.openweathermap.org/data/2.5/weather?lat=" +
 						data[0].lat +
@@ -85,11 +109,12 @@ document
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
+
 						// permet d'afficher la température sur un nombre entier
 						document.querySelector("#temp").innerHTML =
 							Math.round(data.main.temp) + "°C";
-                            let temperature = Math.round(data.main.temp); 
-                            console.log(temperature) ; 
+						let temperature = Math.round(data.main.temp);
+						console.log(temperature);
 
 						// Affiche les icones selon le temps
 						const weatherMain = data.weather[0].main;
@@ -97,21 +122,25 @@ document
 							weatherIcon.src = weatherIcons[weatherMain];
 						}
 
-                        // change la couleur du dégradé selon la température 
-                        let ctnInfoMeteo = document.querySelector("#ctn_info_meteo")
-                        if(temperature <= 6 ){
-                            ctnInfoMeteo.classList.replace("glass_filter", "cold_temp_filter") ; 
-                        }  else if (temperature >= 18){ 
-                            ctnInfoMeteo.classList.replace("glass_filter", "hot_temp_filter") ;
-                        } 
-
-                    });
+						// change la couleur du dégradé selon la température
+						let ctnInfoMeteo = document.querySelector("#ctn_info_meteo");
+						if (temperature <= 6) {
+							ctnInfoMeteo.classList.replace(
+								"glass_filter",
+								"cold_temp_filter"
+							);
+						} else if (temperature >= 18) {
+							ctnInfoMeteo.classList.replace(
+								"glass_filter",
+								"hot_temp_filter"
+							);
+						}
+						
+					});
 			});
 
+		// //retour page d'accueil
+		// mainPage.classList.toggle("visible");
 
-
-		//retour page d'accueil
-		mainPage.classList.toggle("visible");
-
-		settingPage.classList.toggle("none");
+		// settingPage.classList.toggle("none");
 	});
