@@ -117,6 +117,10 @@ border-radius: 5%;
     font-weight: 700;
 }
 
+.weatherIcon {
+  width: 7.625rem;
+  height: 6.875rem ;
+}
 
 #ctn_map {
     width: 18.375rem;
