@@ -24,10 +24,14 @@ backdrop-filter: blur(50px);
 
 }
 
+.cold_temp_filter{
+  background: linear-gradient(120deg, rgb(60, 101, 182, 0.62), rgb(255, 255, 255, 0.10));
+backdrop-filter: blur(50px);
+}
+
 .glass_filter{
   background-color: rgba(217, 217, 217, 0.30) ;
   backdrop-filter: blur(50px);
-
   border: 1px solid rgb(44, 66, 104, 0.30)  ;
 }
 

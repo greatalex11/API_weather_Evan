@@ -10,6 +10,14 @@ let moreInfosPage = document.querySelector(".moreInfoPage");
 console.log(moreInfosPage);
 let weatherIcon = document.querySelector(".weatherIcon");
 console.log(weatherIcon);
+const weatherIcons = {
+	Clear: "/src/assets/meteo/sun.svg",
+	Clouds: "/src/assets/meteo/cloudy.svg",
+	Rain: "/src/assets/meteo/rain-1.svg",
+	Thunderstorm: "/src/assets/meteo/storm.svg",
+	Snow: "/src/assets/meteo/snow.svg",
+};
+
 
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
@@ -77,100 +85,33 @@ document
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data);
-                        // permet d'afficher la température sur un nombre entier
+						// permet d'afficher la température sur un nombre entier
 						document.querySelector("#temp").innerHTML =
 							Math.round(data.main.temp) + "°C";
+                            let temperature = Math.round(data.main.temp); 
+                            console.log(temperature) ; 
 
-                        // Affiche les icones selon le temps
-						if (data.weather[0].main == "Clear") {
-							weatherIcon.src = "/src/assets/meteo/sun.svg";
-						} else if (data.weather[0].main == "Clouds") {
-							weatherIcon.src = "/src/assets/meteo/cloudy.svg";
-						} else if (data.weather[0].main == "Rain") {
-							weatherIcon.src = "/src/assets/meteo/rain-1.svg";
-						} else if (data.weather[0].main == "Rain") {
-							weatherIcon.src = "/src/assets/meteo/rain-1.svg";
+						// Affiche les icones selon le temps
+						const weatherMain = data.weather[0].main;
+						if (weatherIcons.hasOwnProperty(weatherMain)) {
+							weatherIcon.src = weatherIcons[weatherMain];
 						}
-                        else if (data.weather[0].main == "Thunderstorm") {
-							weatherIcon.src = "/src/assets/meteo/storm.svg";
-						}
-                        else if (data.weather[0].main == "Snow") {
-							weatherIcon.src = "/src/assets/meteo/snow.svg";
-						}
-					});
+
+                        // change la couleur du dégradé selon la température 
+                        let ctnInfoMeteo = document.querySelector("#ctn_info_meteo")
+                        if(temperature <= 6 ){
+                            ctnInfoMeteo.classList.replace("glass_filter", "cold_temp_filter") ; 
+                        }  else if (temperature >= 18){ 
+                            ctnInfoMeteo.classList.replace("glass_filter", "hot_temp_filter") ;
+                        } 
+
+                    });
 			});
+
+
 
 		//retour page d'accueil
 		mainPage.classList.toggle("visible");
+
 		settingPage.classList.toggle("none");
 	});
-
-// // test changement d'icone
-
-// if(data.weather[0].main == "Clear"){
-//     weatherIcon.src = "../assets/meteo/sun.svg" ;
-// } else if (data.weather[0].main == "Cloud"){
-//     weatherIcon.src = "../assets/meteo/cloudy.svg" ;
-// } else if (data.weather[0].main == ""){
-//     weatherIcon.src = "../assets/meteo/cloudy.svg" ;
-// }
-
-//test api OpenWeather
-
-// Geolocalisation;
-map.locate({ setView: true, maxZoom: 16 });
-
-function onLocationFound(e) {
-	var radius = e.accuracy;
-
-	L.marker(e.latlng)
-		.addTo(map)
-		.bindPopup("Vous êtes ici " + radius)
-		.openPopup();
-
-	L.circle(e.latlng, radius).addTo(map);
-}
-map.on("locationfound", onLocationFound);
-
-//Message d'erreur Geolocalisation
-function onLocationError(e) {
-	alert(e.message);
-}
-map.on("locationerror", onLocationError);
-
-//Initialisation et geocalisation pour map2
-
-// let map2 = L.map('map2').setView([51.505, -0.09], 13);
-//     // add the same OpenStreetMap tile layer to the second map
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map2);
-
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at " + e.latlng.toString())
-//         .openOn(map2);
-// }
-
-// map2.on('click', onMapClick);
-
-//     // Geolocalisation
-// map2.locate({setView: true, maxZoom: 16});
-
-// function onLocationFound(e) {
-//     var radius = e.accuracy;
-
-//     L.marker(e.latlng).addTo(map2)
-//         .bindPopup("Vous êtes ici " + radius).openPopup();
-
-//     L.circle(e.latlng, radius).addTo(map2);
-// }
-// map2.on('locationfound', onLocationFound);
-
-//     //Message d'erreur Geolocalisation
-// function onLocationError(e) {
-//     alert(e.message);
-// }
-// map2.on('locationerror', onLocationError);
