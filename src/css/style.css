@@ -347,8 +347,8 @@ input[type="submit"]{
 
 /* ------MoreInfosPage---------- */
 .moreInfosPage{
-    /* display: flex ; */
-    display: flex ; 
+    display: flex ;
+    display: none ; 
     flex-direction: column; 
     align-items: center;
     
