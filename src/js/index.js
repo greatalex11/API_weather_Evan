@@ -27,10 +27,10 @@ settingIcon.addEventListener("click", function () {
 	settingPage.classList.toggle("visible");
 });
 
-weatherIcon.addEventListener("click", function () {
-	weatherIcon.classList.toggle("visible");
-	mainPage.classList.toggle("hidden");
-});
+// weatherIcon.addEventListener("click", function () {
+// 	weatherIcon.classList.toggle("visible");
+// 	mainPage.classList.toggle("hidden");
+// });
 
 // Initialisation de la map OpenstreetMap
 
@@ -154,9 +154,8 @@ function searchInAPI (location) {
         });
 
     //retour page d'accueil
-    mainPage.classList.toggle("visible");
-
-    settingPage.classList.toggle("none");
+    mainPage.classList.toggle("hidden");
+    settingPage.classList.toggle("visible");
     }
 
 
