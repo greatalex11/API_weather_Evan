@@ -52,7 +52,7 @@ flex-direction: column;
     height : 10% ;
     display: flex;
     flex-direction: row;
-   
+	justify-content: space-around;
 }
 
 .ctn_btn > .top_btn {
