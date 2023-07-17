@@ -23,14 +23,9 @@ const weatherIcons = {
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
 settingIcon.addEventListener("click", function () {
-	mainPage.classList.toggle("hidden");
-	settingPage.classList.toggle("visible");
+    mainPage.classList.toggle('hidden');
+    settingPage.classList.toggle('hidden')
 });
-
-// weatherIcon.addEventListener("click", function () {
-// 	weatherIcon.classList.toggle("visible");
-// 	mainPage.classList.toggle("hidden");
-// });
 
 // Initialisation de la map OpenstreetMap
 
@@ -155,7 +150,7 @@ function searchInAPI (location) {
 
     //retour page d'accueil
     mainPage.classList.toggle("hidden");
-    settingPage.classList.toggle("visible");
+    settingPage.classList.toggle("hidden");
     }
 
 
