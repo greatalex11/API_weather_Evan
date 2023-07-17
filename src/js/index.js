@@ -25,6 +25,8 @@ const weatherIcons = {
 settingIcon.addEventListener("click", function () {
     mainPage.classList.toggle('hidden');
     settingPage.classList.toggle('hidden')
+
+    
 });
 
 // Initialisation de la map OpenstreetMap
@@ -52,11 +54,6 @@ function onLocationFound(e) {
 
 	L.circle(e.latlng, radius).addTo(map);
 
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" +
-    e.latlng.lat + e.latlng.lat +
-    "&limit=1&appid=308072db4828ee7f23b0fe63c3dd9918") ;
-
-    
 }
 
 map.on("locationfound", onLocationFound);

@@ -180,11 +180,13 @@ input[id="118"] {
 	justify-content: space-around;
 	align-items: center;
 	height: 90%;
+	
 }
 
 #ctn_info_nav {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }
 
 #localisation_info {
@@ -209,11 +211,14 @@ input[id="118"] {
 }
 
 form {
-	height: 75%;
+	height: 90%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: space-evenly;
 	width: 19.375rem;
+	margin-right: 0;
+	padding-left: 3.2rem ;
 }
 
 /* cache apparance par defaut des checkbox */
@@ -311,6 +316,14 @@ form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+
+#ctnRandomValidation{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 145px ;
 }
 
 input[type="submit"] {
