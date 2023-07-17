@@ -91,7 +91,7 @@ main {
 	justify-content: space-evenly;
 }
 
-#ctn_info_nav {
+.ctn_info_nav {
 	display: flex;
 	flex-direction: row;
 }
@@ -183,10 +183,12 @@ input[id="118"] {
 	
 }
 
-#ctn_info_nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+#ctn_info_nav_settings {
+	width: 77%;
+	
+	margin-top: 1.5rem ;
+	margin-right: 0rem ;
+	margin-left: 3.25rem;
 }
 
 #localisation_info {
