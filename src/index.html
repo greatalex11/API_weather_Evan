@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+    <title>Weather app</title>
+    <meta name="description" content="Application météo">
+</head>
+
+<body>
+<div id="bck_ctn">
+    
+    <div class="ctn_btn">
+        
+        <p  class="top_btn hot_temp_filter">
+            <img src="assets/camera-outline.svg" width="32px" height="28px"alt="">
+        </p>
+
+        <div class="top_btn hot_temp_filter">
+            <img src="assets/setting_icon.svg" id="setting_icon" width="32px" height="32px" alt="">
+        </div>
+
+		<div class="top_btn hot_temp_filter">
+            <img src="assets/home_icon.svg" id="home" width="32px" height="32px" alt="">
+        </div>
+		<div class="top_btn hot_temp_filter">
+            <img src="assets/infoIcone.svg" id="info" width="32px" height="32px" alt="">
+        </div>
+    </div>
+
+   <!-- main page -->
+    <main id="mainPage" class="visible">
+    <div class="ctn_info_nav">
+        <div class="parallelogram glass_filter">
+            <p class="info_nav">2h30</p></div>
+        <div class="parallelogram glass_filter">
+            <p class="info_nav ">300km</p>
+        </div>
+    </div>
+
+    <div id="ctn_info_meteo" class="glass_filter">
+       <p id="temp"></p> 
+        <img class="weatherIcon" src="assets/meteo/sun_cloud_main.svg" alt="icone représentant la météo actuel">
+    </div>
+
+    <div id="ctn_map" class="glass_filter">
+        <div id="map">
+        </div>
+    </div>
+
+    <div id="bck_button">
+    <input type="button" id="118" value="118">
+    </div>
+
+    </main>
+
+    <!-- page settings -->
+    <div class="ctn_setting_page hidden">
+        
+        <div class="ctn_info_nav" id="ctn_info_nav_settings">
+            <div class="parallelogram glass_filter">
+                <p class="info_nav">2h30</p></div>
+            <div class="parallelogram glass_filter">
+                <p class="info_nav ">300km</p>
+            </div>
+        </div>
+
+
+        <form id="formulaire" method="get" action="index.html">
+            <div id="localisation_info" class="glass_filter">
+                <label for="recherche"></label>
+                <input type="text" id="recherche" name="recherche" placeholder="Choisissez votre ville" >
+            </div>
+
+            <div id="ctn_ptn_irt"  class="glass_filter" >
+
+                <label for="lieux_interet" class="ckb_ctn glass_filter">
+                    
+                    <input type="checkbox" name="" id="lieux_interet">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label for="parking" class="ckb_ctn glass_filter">
+                    <input type="checkbox" name="parking" id="parking">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label for="restaurant" class="ckb_ctn glass_filter">
+                    <input type="checkbox" name="restaurant" id="restaurant">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="lieux_historique" class="ckb_ctn glass_filter">
+                    <input type="checkbox" name="lieux_historique" id="lieux_historique">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label for="hotel" class="ckb_ctn glass_filter">
+                    <input type="checkbox" name="hotel" id="hotel">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="hopital" class="ckb_ctn glass_filter">
+                    <input type="checkbox" name="hopital" id="hopital">
+                    <span class="checkmark"></span>
+                </label>
+        </div>
+
+        <div id="ctnRandomValidation">
+            <input type="button" value="Random" id="random" class="glass_filter">
+            <input id="validation" type="submit" value="Validation" class="glass_filter">
+        </div>  
+    
+        </form>
+
+    </div>
+
+    <!---------- moreInfoPage ---------->
+
+    <div class="moreInfosPage">
+        <div id="ctn_map" class="glass_filter">
+            <div id="map2">
+            </div>
+        </div>
+        
+        <div class="ctn_wiki glass_filter">
+
+        </div>
+    </div>
+</div > 
+
+<script src="js/index.js"></script>
+</body>
+</html>
