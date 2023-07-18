@@ -34,7 +34,7 @@ Shield : [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 Cette œuvre est mise à disposition selon les termes de la
 [licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International][cc-by-nc-sa]. 
 
-Voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+Voir le fichier [LICENSE.md](/LICENCE.md) pour plus d'informations
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
