@@ -23,6 +23,10 @@ Depuis la page d'accueil cliquer sur le bouton paramètre (icône d'engrenage) p
 
 ![Alt text](src/assets/readMeAssets/searchPage.png) ![Alt text](src/assets/readMeAssets/appScreenShot.png)
 
+## Contributing
+
+Si vous souhaitez contribuer, lisez le fichier [CONTRIBUTING.md](/CONTRIBUTTING.md) pour savoir comment le faire.
+
 ## Versions et fonctionnalités
 
 **Dernière version stable :** 1.0
