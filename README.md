@@ -2,17 +2,16 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/certified-yourboyserge.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/reading-6th-grade-level.svg)](https://forthebadge.com)
 
-Le projet weather app est un projet de formation visant à s'exercer sur des domaines front-end : desgin, maquettage et intergration dynamique.
-L'objectif est de concevoir une application météo avec des fonctionnalités de découverte de lieu aléatoires.
+Le projet weather app est un projet de formation visant à s'exercer sur des domaines front-end : design, maquettage et intergration dynamique. L'objectif est de concevoir une application météo avec des fonctionnalités de découverte de lieu aléatoires
 
 ## Pré-requis et démarrage
 
-La version 1.0 du projet est disponible via le repos, vous aurez besoins :
+La version 1.0 du projet est disponible via le repos, vous aurez besoin :
 
 -  Du dossier téléchargé
--  un ordinateur fonctionnel
+-  Un ordinateur fonctionnel
 
-Ouvrez le fichier index.html situé dans le dossier src.
+Ouvrez le fichier index.html situé dans le dossier /src.
 
 Vous vous retrouverez sur la home page du projet.
 
@@ -20,7 +19,7 @@ Vous vous retrouverez sur la home page du projet.
 
 ## Navigation in app
 
-Depuis la page d'acceuil cliquer sur le bouton paramètre (icone d'engrenage) pour vous retrouver sur la page de recherche. Sur cette page vous pouvez sois rechercher un lieu précis via la barre de recherche sois une ville aléatoire via le bouton random.
+Depuis la page d'accueil cliquer sur le bouton paramètre (icône d'engrenage) pour vous retrouver sur la page de recherche. Sur cette page, vous pouvez sois rechercher un lieu précis via la barre de recherche sois une ville aléatoire via le bouton random.
 
 ![Alt text](src/assets/readMeAssets/searchPage.png) ![Alt text](src/assets/readMeAssets/appScreenShot.png)
 
@@ -35,7 +34,7 @@ Depuis la page d'acceuil cliquer sur le bouton paramètre (icone d'engrenage) po
 
 **Prochaines fonctionnalités à inclure**
 
--  Résumé wikipédia du lieu recherché
+-  Résumé Wikipédia du lieu recherché
 
 ## Fabriqué avec
 
