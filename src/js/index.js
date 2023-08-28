@@ -8,7 +8,9 @@ let settingPage = document.querySelector(".ctn_setting_page");
 console.log(settingPage);
 let moreInfosPage = document.querySelector(".moreInfoPage");
 console.log(moreInfosPage);
-let weatherIcon = document.querySelector(".weatherIcon");
+let moreInfosIcon = document.querySelector("#info") ; 
+let ctnWiki = document.querySelector(".ctn_wiki") ; 
+let weatherIcon = document.querySelector("#weatherIcon");
 console.log(weatherIcon);
 const weatherIcons = {
 	Clear: "/src/assets/meteo/sun.svg",
@@ -23,10 +25,14 @@ const weatherIcons = {
 // En appuyant sur l'incone d'engrenage le main disparait en lui appliquant un display none et même temps la partie setting page qui est de base en display non apparait avec un display flex cela permet de mimer un changement de page en gardant un seul fichier html
 
 settingIcon.addEventListener("click", function () {
-    mainPage.classList.toggle('hidden');
-    settingPage.classList.toggle('hidden')
+    mainPage.classList.toggle('hidden') ;
+    settingPage.classList.toggle('hidden') 
+});
 
-    
+moreInfosIcon.addEventListener("click", function () {
+    mainPage.classList.toggle('hidden');
+    ctnWiki.classList.toggle('hidden') ; 
+    // moreInfosPage.classList.toggle('hidden') 
 });
 
 // Initialisation de la map OpenstreetMap
@@ -183,5 +189,5 @@ document
 
         }); 
 
-        
+
 

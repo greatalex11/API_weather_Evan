@@ -355,27 +355,20 @@ input[type="submit"]:active {
 /* ------MoreInfosPage---------- */
 .moreInfosPage {
 	display: flex;
-	display: none;
 	flex-direction: column;
 	align-items: center;
 
 	justify-content: space-between;
-	height: 90%;
-	padding-top: 3.375rem;
-	padding-bottom: 2.81rem;
-}
-
-.moreInfosPage > #ctn_map {
-	width: 21.875rem;
-	height: 19.875rem;
-}
-
-#map2 {
-	width: 20.307rem;
-	height: 18.49463rem;
+	/* height: 90%; */
+	/* padding-top: 3.375rem;
+	padding-bottom: 2.81rem; */
 }
 
 .ctn_wiki {
-	width: 21.875rem;
-	height: 19.875rem;
+	
+	width: 90%;
+	height: 45.625rem;
+	border-radius: 10px;
+	margin: 0;
+	padding: 0;
 }
