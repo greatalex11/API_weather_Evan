@@ -3,3 +3,4 @@ package-lock.json
 .babelrc
 package.json
 webpack.config.js
+src/js/exempleWiki.js

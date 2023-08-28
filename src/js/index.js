@@ -32,7 +32,6 @@ settingIcon.addEventListener("click", function () {
 moreInfosIcon.addEventListener("click", function () {
     mainPage.classList.toggle('hidden');
     ctnWiki.classList.toggle('hidden') ; 
-    // moreInfosPage.classList.toggle('hidden') 
 });
 
 // Initialisation de la map OpenstreetMap
@@ -185,9 +184,28 @@ document
                     }
                     const cityFromArray = getRandomCity() ; 
                     searchInAPI(cityFromArray) ; 
+                    let nomVilleAleatoire = cityFromArray ; 
+                    getWikiInfos(nomVilleAleatoire) ; 
                 })
 
         }); 
+
+// fonctionalité infos wikipédia 
+async function  getWikiInfos (nomVilleAleatoire){
+    const wikiApiLink = "https://fr.wikipedia.org/api/rest_v1/page/summary/";
+    const wikiQuery = wikiApiLink + nomVilleAleatoire ;
+
+    let reponseWiki = await fetch(wikiQuery) ; 
+    let dataWiki = await reponseWiki.json() ; 
+    console.log(dataWiki) ;
+
+    let wikiText = dataWikipedia.extract;
+    console.log(wikiText) ; 
+
+    const ctnWiki = document.querySelector(".ctnTextFromWikiAPI") ; 
+    ctnWiki.textContent = wikiText ; 
+
+}
 
 
 
