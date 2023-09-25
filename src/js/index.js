@@ -130,7 +130,7 @@ function searchInAPI (location) {
                     // Affiche les icones selon le temps
                     const weatherMain = data.weather[0].main;
                     if (weatherIcons.hasOwnProperty(weatherMain)) {
-                        weatherIcon.src = weatherIcons[weatherMain];
+                        weatherIcons.src = weatherIcons[weatherMain];
                     }
 
                     // change la couleur du dégradé selon la température
@@ -191,7 +191,7 @@ document
         }); 
 
 // fonctionalité infos wikipédia 
-async function  getWikiInfos (nomVilleAleatoire){
+async function  getWikiInfos(nomVilleAleatoire){
     const wikiApiLink = "https://fr.wikipedia.org/api/rest_v1/page/summary/";
     const wikiQuery = wikiApiLink + nomVilleAleatoire ;
 
@@ -199,12 +199,11 @@ async function  getWikiInfos (nomVilleAleatoire){
     let dataWiki = await reponseWiki.json() ; 
     console.log(dataWiki) ;
 
-    let wikiText = dataWikipedia.extract;
+    let wikiText = dataWiki.extract;
     console.log(wikiText) ; 
 
     const ctnWiki = document.querySelector(".ctnTextFromWikiAPI") ; 
     ctnWiki.textContent = wikiText ; 
-
 }
 
 
